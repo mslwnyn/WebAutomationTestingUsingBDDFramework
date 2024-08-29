@@ -11,7 +11,7 @@ public class LoginPage extends PagesUtil {
     By username = By.name("userName");
     By password = By.name("password");
     By loginButton = By.name("submit");
-    By  testLabel= By.xpath("//h3[text()='Login Successfully']");
+    By registerLink = By.linkText("REGISTER");
 
 
     public LoginPage() {
@@ -37,8 +37,8 @@ public class LoginPage extends PagesUtil {
         getElement(loginButton,driver).click();
     }
 
-    public String getLabel(){
-        return getElement(testLabel,driver).getText();
+    public void clickRegisterLink(){
+        getElement(registerLink,driver).click();
     }
 
 }

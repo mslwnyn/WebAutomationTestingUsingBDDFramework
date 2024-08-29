@@ -1,6 +1,6 @@
 Feature: Browse the site pages
 
-  @web
+  @web  @regression  @login
   Scenario Outline: User Login
     Given  the user is browsing
     When   the user enters the "<username>" and "<password>"

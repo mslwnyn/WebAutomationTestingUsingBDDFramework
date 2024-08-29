@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import za.co.tshimx.base.BaseUtil;
+import za.co.tshimx.pages.LandingPage;
 import za.co.tshimx.pages.LoginPage;
 import za.co.tshimx.utils.PagesUtil;
 
@@ -16,6 +17,7 @@ public class LoginStepdefs extends BaseUtil {
 
     WebDriver driver;
     LoginPage loginPage;
+    LandingPage landingPage;
 
     public LoginStepdefs() {
 
@@ -38,7 +40,8 @@ public class LoginStepdefs extends BaseUtil {
     @Then("Clicks the login button")
     public void clicksTheLoginButton() throws Exception {
         loginPage.clickLoginButton();
-        Assert.assertEquals(loginPage.getLabel(),"Login Successfully");
+        landingPage= new LandingPage (driver);
+        Assert.assertEquals(landingPage.getLabel(),"Login Successfully");
         PagesUtil.takeSnapShot(driver,"./screenshots/test"+ new Date().toInstant().getEpochSecond()+".png");
     }
 }
