@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 @io.cucumber.junit.CucumberOptions(
         features = "./src/test/java/za/co/tshimx/features",
         glue={"za.co.tshimx.stepdefs"},
-        tags = "@web"
+        tags = "@web",
+        plugin = {"json:target/cucumber.json","html:target/site/cucumber-pretty"}
+
 
 )
 public class TestRunner {
